@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+   background-color: #01a84f;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <h3>Purchase Department</h3>
+  <ul class="nav nav-pills nav-justified" role="tablist">
+    <li class="active"><a data-toggle = "pill" href="#Order">Order</a></li>
+    <li><a data-toggle = "pill" href="#ApprovedRequest">Approved Requests</a></li>
+    <li><a data-toggle = "pill" href="#PendingRequest">Pending Requests</a></li>
+    <li><a data-toggle = "pill" href="#Invoices">Invoices</a></li>        
+  </ul>
+<div class="tab-content">
+    <div id="order" class="tab-pane fade in active">
+      <h3>Place Order</h3>
+      <p></p>
+    </div>
+    <div id="ApprovedRequest" class="tab-pane fade">
+      <h3>Find the Approved requests here</h3>
+      <p></p>
+    </div>
+    <div id="PendingRequest" class="tab-pane fade">
+      <h3>Pending Requests</h3>
+      <p></p>
+    </div>
+    <div id="Invoices" class="tab-pane fade">
+      <h3>Invoices of previous Transactions.</h3>
+      <p></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
