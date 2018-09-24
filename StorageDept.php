@@ -53,7 +53,6 @@ label {
 }
 </style>
 	<?php
-	error_reporting(0);
 	$host = "localhost";
 	$user = "user123";
 	$password="pass";
@@ -188,8 +187,18 @@ $db->close();
 </div>
 
 </center>
+</body>
     </div>
     <div id="availability" class="tab-pane fade">
+<?php
+	$host = "localhost";
+	$user = "user123";
+	$password="pass";
+	$databaseName = "asset_management";
+	$connect = mysqli_connect($host,$user,$password,$databaseName);
+	?>
+	</head>
+	<body>
 		<div class="container" >
 		<center>Current transfer queries and their status</center>
 		<div>
