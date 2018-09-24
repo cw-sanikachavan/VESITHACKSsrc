@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Asset Management System</title>
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<meta charset="utf-8">
-		<style>
-		<style>
-body {font-family: Comic Sans MS, Helvetica, sans-serif;}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  body {font-family: Comic Sans MS, Helvetica, sans-serif;}
 * {box-sizing: border-box;}
 
 input[type=text], select {
@@ -46,32 +46,37 @@ label {
 	font-size:20px;
 	float:left;
 }
-		</style>
+.nav-pills>li.active>a,
+.nav-pills>li.active>a:focus,
+.nav-pills>li.active>a:hover {
+   background-color: #01a84f;
+}
+</style>
 	<?php
+	error_reporting(0);
 	$host = "localhost";
 	$user = "user123";
 	$password="pass";
 	$databaseName = "asset_management";
 	$db = mysqli_connect($host,$user,$password,$databaseName);
 	?>
-	</head>
-	<body>
-	<center>
-		<div class="container" >
-		<center><h1>Current Asset Availability</h1></center>
-		<div>
-				
-		<?php
+</head>
+<body>
+ <div id="PendingRequest" style="background-color:#01a84f; height:80px; width:100%; top:100px; color:#ffffff">
+      <h1>Pending Requests</h1>
+	 </div>
+	 <div>
+      <?php
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
-$q="SELECT * FROM product ";
+$q="SELECT * FROM request WHERE ststus='pending' ";
 $r=mysqli_query($db,$q);
 $list1=mysqli_fetch_assoc($r);
 if($list1!=""){
 echo "<div id='table'><center><table border=1>
   <tr>
-    <th>Product ID</th>
+    <th>Request ID</th>
     <th>Product Name</th> 
     <th>Brand</th>
 	<th>Category</th>
@@ -93,7 +98,7 @@ echo "</tr>";
 echo "</table><br>";
 $db->close();
 ?>
-		</div>
-		</center>
-	</body>
+    </div>
+	</div>
+</body>
 </html>

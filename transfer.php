@@ -48,6 +48,7 @@ label {
 }
 		</style>
 	<?php
+	error_reporting(0);
 	$host = "localhost";
 	$user = "user123";
 	$password="pass";
@@ -58,24 +59,25 @@ label {
 	<body>
 	<center>
 		<div class="container" >
-		<center><h1>Current Asset Availability</h1></center>
+		<center><h1>Current transfer queries and their status</h1></center>
 		<div>
+			<form  action="transfer_form.php" style="margin-left:20px;margin-top:14px;" class="container">
 				
 		<?php
 if ($db->connect_error) {
     die("Connection failed: " . $db->connect_error);
 }
-$q="SELECT * FROM product ";
+$q="SELECT * FROM transfer ";
 $r=mysqli_query($db,$q);
 $list1=mysqli_fetch_assoc($r);
 if($list1!=""){
 echo "<div id='table'><center><table border=1>
   <tr>
-    <th>Product ID</th>
+    <th>Query no.</th>
+	<th>Department</th>
     <th>Product Name</th> 
-    <th>Brand</th>
-	<th>Category</th>
-	<th>Quantity</th>
+    <th>Quantity</th>
+	<th>Status</th>
 	<tr>
 </tr></center>";	}
 else{
@@ -83,16 +85,18 @@ else{
 }
 while($list1!=""){
 echo "<tr>";
-echo "<td>" . $list['ID'] . "</td>";
+echo "<td>" . $list['query_no'] . "</td>";
+echo "<td>" . $list['department'] . "</td>";
 echo "<td>" . $list['name'] . "</td>";
-echo "<td>" . $list['brand'] . "</td>";
-echo "<td>" . $list['category'] . "</td>";
 echo "<td>" . $list['quantity'] . "</td>";
+echo "<td>" . $list['status'] . "</td>";
 echo "</tr>";
 }
 echo "</table><br>";
 $db->close();
 ?>
+<input type="submit" value="Add new Query" style="background-color: #01a84f ; color:white; font-size:20px;"> 
+</form>
 		</div>
 		</center>
 	</body>

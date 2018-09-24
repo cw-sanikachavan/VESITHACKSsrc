@@ -1,0 +1,53 @@
+.content {
+    float: left;
+    margin-top: 50px;
+    width: 80%;
+    margin-left: 10%;
+    background-color:white;
+}
+
+.icon {
+    float: left;
+    width: auto;
+	height: auto;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid #01a84f;
+    box-shadow: 0 0 2px #01a84f;
+    cursor: pointer;
+    margin-top: 5%;
+	margin-left:5%;
+    transition: all 0.5s;
+    text-decoration: none;
+}
+.icon:hover {
+    box-shadow: 0 0 5px #01a84f;
+    transform: scale(1.4);
+}
+.doctor_register,
+.hospital_register
+ {
+    margin-left: 15%;
+}
+
+.logo {
+    
+    width: 50%;
+    margin-left: 23%;
+    margin-top: 30px;
+    background-size: 80% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#title {
+	background-color: #01a84f;
+    margin-top: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    color:#ffffff;
+    margin-bottom: 15px;
+	height:100px;
+	width:100%;
+}

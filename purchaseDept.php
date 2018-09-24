@@ -1,11 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
+<?php
+	error_reporting(0);
+	$host = "localhost";
+	$user = "user123";
+	$password="pass";
+	$databaseName = "asset_management";
+	$db = mysqli_connect($host,$user,$password,$databaseName);
+	?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+  body {font-family: Comic Sans MS, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #01a84f;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit] {
+    background-color: #01a84f;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.container {
+	margin-top:20px;
+	height:auto;
+	width:50%;
+    border-radius: 5px;
+    background-color:white;
+    padding: 20px;
+	border: 1px solid #01a84f;
+}
+label {
+	font-size:20px;
+	float:left;
+}
 .nav-pills>li.active>a,
 .nav-pills>li.active>a:focus,
 .nav-pills>li.active>a:hover {
@@ -19,7 +67,7 @@
   
   <h3>Purchase Department</h3>
   <ul class="nav nav-pills nav-justified" role="tablist">
-    <li class="active"><a data-toggle = "pill" href="#Order">Order</a></li>
+    <li class="active"><a data-toggle = "pill" href="#order">Order</a></li>
     <li><a data-toggle = "pill" href="#ApprovedRequest">Approved Requests</a></li>
     <li><a data-toggle = "pill" href="#PendingRequest">Pending Requests</a></li>
     <li><a data-toggle = "pill" href="#Invoices">Invoices</a></li>        
